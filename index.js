@@ -36,13 +36,13 @@ const app = express();
 app.use(bodyParser.json());
 
 // cors
-// app.use(
-//   cors({
-//     origin: ["https://spot-finder-project-frontend.vercel.app"],
-//     methods: ["GET,HEAD,PUT,PATCH,POST,DELETE"],
-//     credentials: true
-//   })
-// );
+app.use(
+  cors({
+    origin: ["https://spotfinder-client.vercel.app"],
+    methods: ["GET,HEAD,PUT,PATCH,POST,DELETE"],
+    credentials: true
+  })
+);
 
 // Adding CSP header middleware
 app.use((req, res, next) => {

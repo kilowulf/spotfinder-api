@@ -1,0 +1,8 @@
+node_modules
+.env
+deployment.txt
+config/keys.js
+keys.js
+config/prod.js
+prod.js
+vercel.json

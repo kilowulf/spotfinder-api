@@ -93,6 +93,44 @@ require("./routes/openAIRoute")(app);
 //   });
 // }
 
+// troubleshoot vercel deployment connection
+const API_BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://spotfinder-api.vercel.app"
+    : "http://localhost:5000";
+
+// Log the API URL and environment to confirm correct values
+console.log("API Base URL:", API_BASE_URL);
+console.log("Environment:", process.env.NODE_ENV);
+
+axios
+  .get(`${API_BASE_URL}/api/your-endpoint`)
+  .then(response => {
+    // Log the response for debugging
+    console.log("API Response:", response);
+
+    // Handle the successful response
+    // For example, you might update the state with the response data
+  })
+  .catch(error => {
+    // Log the error details for troubleshooting
+    console.error("API Request Failed:", error);
+
+    // Log specific error details
+    if (error.response) {
+      // The request was made, and the server responded with a status code
+      // that falls out of the range of 2xx
+      console.error("Status Code:", error.response.status);
+      console.error("Response Data:", error.response.data);
+    } else if (error.request) {
+      // The request was made but no response was received
+      console.error("No Response Received:", error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.error("Error Message:", error.message);
+    }
+  });
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT);

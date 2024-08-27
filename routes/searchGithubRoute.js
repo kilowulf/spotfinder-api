@@ -1,5 +1,5 @@
 const express = require("express");
-const { searchGithub } = require("../../services/githubSearchQuery");
+const { searchGithub } = require("../services/githubSearchQuery");
 
 module.exports = app => {
   console.log("Loading github search route");

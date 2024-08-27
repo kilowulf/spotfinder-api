@@ -39,8 +39,8 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: ["https://spotfinder-client.vercel.app"],
-    methods: ["GET,HEAD,PUT,PATCH,POST,DELETE"]
-    // credentials: true
+    methods: ["GET,HEAD,PUT,PATCH,POST,DELETE"],
+    credentials: true
   })
 );
 

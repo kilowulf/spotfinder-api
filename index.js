@@ -79,9 +79,9 @@ app.use(passport.session());
 
 // calling function from auth_routes.js and passing app as argument
 require("./api/oauthRoute")(app);
-require("./api/routes/userRoutes")(app);
-require("./api/routes/searchGithubRoute")(app);
-require("./api/routes/openAIRoute")(app);
+require("./api/userRoutes")(app);
+require("./api/searchGithubRoute")(app);
+require("./api/openAIRoute")(app);
 
 // Ensure production assets are served when hosted
 // if (process.env.NODE_ENV === "production") {

@@ -5,6 +5,7 @@ const passport = require("passport");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const graphqlServer = require("./services/faqGraphQlService");
+const axios = require("axios");
 
 require("dotenv").config();
 
